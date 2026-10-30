@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acme Private Credit Investment Drafting Portal</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="sidebar__top">
+          <div class="sidebar__logo" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <nav class="sidebar__nav">
+            <button class="nav-item" type="button" data-view-trigger="dashboard">
+              <span class="nav-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 13h8V3H3zM13 21h8v-6h-8zM13 11h8V3h-8zM3 21h8v-6H3z" />
+                </svg>
+              </span>
+              <span>DASHBOARD</span>
+            </button>
+            <button class="nav-item nav-item--active" type="button" data-view-trigger="portal">
+              <span class="nav-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v7A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"
+                  />
+                </svg>
+              </span>
+              <span>DRAFTING</span>
+            </button>
+            <button class="nav-item" type="button" data-view-trigger="config">
+              <span class="nav-item__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 8.25A3.75 3.75 0 1 0 12 15.75A3.75 3.75 0 1 0 12 8.25zM19.4 15a1 1 0 0 0 .2 1.1l.1.1a1.25 1.25 0 0 1 0 1.77l-1.68 1.68a1.25 1.25 0 0 1-1.77 0l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.91V20.5A1.25 1.25 0 0 1 13.2 21.75h-2.4a1.25 1.25 0 0 1-1.25-1.25v-.14a1 1 0 0 0-.6-.91 1 1 0 0 0-1.1.2l-.1.1a1.25 1.25 0 0 1-1.77 0L4.3 18a1.25 1.25 0 0 1 0-1.77l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.91-.6H3.5A1.25 1.25 0 0 1 2.25 13.2v-2.4A1.25 1.25 0 0 1 3.5 9.55h.19a1 1 0 0 0 .91-.6 1 1 0 0 0-.2-1.1l-.1-.1a1.25 1.25 0 0 1 0-1.77L5.98 4.3a1.25 1.25 0 0 1 1.77 0l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.91V3.5A1.25 1.25 0 0 1 10.8 2.25h2.4a1.25 1.25 0 0 1 1.25 1.25v.19a1 1 0 0 0 .6.91 1 1 0 0 0 1.1-.2l.1-.1a1.25 1.25 0 0 1 1.77 0l1.68 1.68a1.25 1.25 0 0 1 0 1.77l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .91.6h.14a1.25 1.25 0 0 1 1.25 1.25v2.4a1.25 1.25 0 0 1-1.25 1.25h-.14a1 1 0 0 0-.91.6z"
+                  />
+                </svg>
+              </span>
+              <span>CONFIG</span>
+            </button>
+          </nav>
+        </div>
+        <div class="sidebar__bottom">
+          <section class="user-card" aria-labelledby="user-card-title">
+            <div class="user-card__avatar" aria-hidden="true">J</div>
+            <div>
+              <p class="user-card__label" id="user-card-title">Signed in as</p>
+              <p class="user-card__name">Jason</p>
+              <p class="user-card__meta">Default repository: Korea/Jason</p>
+            </div>
+          </section>
+          <div class="sidebar__brand">ACME PRIVATE CREDIT</div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <section class="workspace app-view" data-view="portal">
+          <header class="workspace__header">
+            <div>
+              <p class="eyebrow">Private Credit Demo</p>
+              <h1>Investment Drafting Portal</h1>
+            </div>
+          </header>
+
+          <section class="top-grid">
+            <div class="ingestion-column">
+              <section class="repository-panel" aria-labelledby="repository-title">
+                <div class="panel-title-row panel-title-row--stacked">
+                  <div>
+                    <h2 id="repository-title">Repository Context</h2>
+                    <p class="repository-panel__subtitle">
+                      Uploaded documents are combined with the selected repository and all visible subfolders.
+                    </p>
+                  </div>
+                </div>
+                <div class="repo-dropdown" id="repo-dropdown">
+                  <button
+                    class="repo-dropdown__trigger"
+                    id="repo-trigger"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="repo-menu"
+                  >
+                    <span>
+                      <span class="repo-dropdown__label">Selected repository</span>
+                      <strong id="selected-repository-name">Korea/Jason</strong>
+                    </span>
+                    <span class="repo-dropdown__chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="repo-dropdown__menu" id="repo-menu" hidden>
+                    <div class="repo-group">
+                      <button class="repo-option" type="button" data-repo="Korea">
+                        <span class="repo-option__title">Korea</span>
+                        <span class="repo-option__members">All Korea files</span>
+                      </button>
+                      <div class="repo-group__children">
+                        <button class="repo-option repo-option--child is-selected" type="button" data-repo="Korea/Jason">
+                          <span class="repo-option__title">Jason</span>
+                          <span class="repo-option__members">Korea/Jason</span>
+                        </button>
+                        <button class="repo-option repo-option--child" type="button" data-repo="Korea/Skye">
+                          <span class="repo-option__title">Skye</span>
+                          <span class="repo-option__members">Korea/Skye</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="repo-group">
+                      <button class="repo-option" type="button" data-repo="India">
+                        <span class="repo-option__title">India</span>
+                        <span class="repo-option__members">All India files</span>
+                      </button>
+                      <div class="repo-group__children">
+                        <button class="repo-option repo-option--child" type="button" data-repo="India/Ishan">
+                          <span class="repo-option__title">Ishan</span>
+                          <span class="repo-option__members">India/Ishan</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="repository-tree" aria-live="polite">
+                  <p class="repository-tree__title">Accessible folders</p>
+                  <ul class="repository-tree__list" id="repository-scope-list">
+                    <li>/Korea</li>
+                    <li>/Korea/Jason</li>
+                  </ul>
+                </div>
+              </section>
+
+              <label
+                class="upload-panel"
+                id="dropzone"
+                for="file-input"
+                aria-label="Upload supporting documents"
+              >
+                <input
+                  id="file-input"
+                  class="sr-only"
+                  type="file"
+                  accept=".pdf,.doc,.docx,.xls,.xlsx,application/pdf"
+                />
+                <div class="upload-panel__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M13.5 3H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.5z"
+                    />
+                    <path d="M13 3v5h5" />
+                    <path d="M12 17v-6" />
+                    <path d="m9.5 13 2.5-2.5L14.5 13" />
+                  </svg>
+                </div>
+                <p class="upload-panel__title">Drag &amp; Drop Docs</p>
+                <p class="upload-panel__subtitle">PDF, DOCX, XLSX (Max 50MB)</p>
+                <p class="upload-panel__filename" id="selected-file">
+                  No document selected
+                </p>
+              </label>
+            </div>
+
+            <section class="queue-panel" aria-labelledby="queue-title">
+              <h2 id="queue-title">Queue Statistics</h2>
+              <dl class="queue-stats">
+                <div>
+                  <dt>Files pending processing</dt>
+                  <dd id="files-pending">0 Files pending processing</dd>
+                </div>
+                <div>
+                  <dt>System Status</dt>
+                  <dd>
+                    <span class="status status--processing" id="system-status"
+                      >Idle</span
+                    >
+                  </dd>
+                </div>
+              </dl>
+              <div class="queue-meta">
+                <span>Region: APAC</span>
+                <span>Pipeline: Demo Mode</span>
+              </div>
+              <div class="control-field control-field--compact">
+                <label class="control-field__label" for="model-select">Model</label>
+                <div class="select-shell">
+                  <select id="model-select" class="select-shell__input">
+                    <option>General</option>
+                    <option>FineTunded_LoanToOwn</option>
+                    <option>FineTunded_DebtorInPosession</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-field control-field--compact">
+                <label class="control-field__label" for="template-select">Template</label>
+                <div class="select-shell">
+                  <select id="template-select" class="select-shell__input"></select>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <section class="llm-command-panel" aria-label="Instruction command">
+            <div class="llm-command-compose">
+              <textarea
+                id="llm-command-input"
+                class="llm-command-input"
+                placeholder="Ask a market question or add drafting instructions..."
+              ></textarea>
+              <button class="mini-button mini-button--primary llm-command-run" id="llm-command-run" type="button" aria-label="Send command">
+                <span aria-hidden="true">➤</span>
+              </button>
+            </div>
+            <div class="llm-response-panel" aria-live="polite">
+              <p class="llm-response-panel__label">LLM Response</p>
+              <div class="llm-response-panel__body" id="llm-response-output">
+                Ask a market or drafting question here to get a response from the connected LLM.
+              </div>
+            </div>
+          </section>
+
+          <section class="output-panel" aria-labelledby="output-title">
+            <div class="panel-title-row">
+              <h2 id="output-title">Intermediate Output JSON</h2>
+              <span class="panel-chip" id="json-badge">Awaiting upload</span>
+            </div>
+            <pre class="json-viewer" id="json-output" aria-live="polite"></pre>
+          </section>
+
+          <section class="actions" aria-label="Workflow actions">
+            <button class="action-button action-button--primary" id="summarize-button" type="button">
+              SUMMARIZE
+            </button>
+            <button class="action-button action-button--secondary" id="verify-button" type="button">
+              VERIFY OUTPUT
+            </button>
+            <button class="action-button action-button--muted" id="draft-button" type="button" disabled>
+              DRAFT
+            </button>
+          </section>
+        </section>
+
+        <section class="workspace app-view" data-view="dashboard" hidden>
+          <header class="workspace__header workspace__header--dashboard">
+            <div>
+              <p class="eyebrow">Review History</p>
+              <h1>Reviewed Outputs Dashboard</h1>
+            </div>
+            <p class="workspace__summary">
+              Past summaries and reviewed outputs grouped by team member and tagged to demo company records.
+            </p>
+          </header>
+
+          <section class="dashboard-grid" id="dashboard-grid" aria-label="Reviewed outputs by user"></section>
+        </section>
+
+        <section class="workspace app-view" data-view="config" hidden>
+          <header class="workspace__header workspace__header--dashboard">
+            <div>
+              <p class="eyebrow">Template Library</p>
+              <h1>Configuration</h1>
+            </div>
+            <p class="workspace__summary">
+              Upload and maintain DOCX drafting templates. Changes here update the template selector in Drafting.
+            </p>
+          </header>
+
+          <section class="config-grid">
+            <section class="config-panel config-panel--upload" aria-labelledby="template-upload-title">
+              <div class="panel-title-row panel-title-row--stacked">
+                <div>
+                  <h2 id="template-upload-title">Upload DOCX Template</h2>
+                  <p class="repository-panel__subtitle">
+                    Add new blank placeholder templates to the drafting library.
+                  </p>
+                </div>
+              </div>
+              <label class="upload-panel upload-panel--template" for="template-file-input">
+                <input
+                  id="template-file-input"
+                  class="sr-only"
+                  type="file"
+                  accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                />
+                <div class="upload-panel__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M13.5 3H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.5z" />
+                    <path d="M13 3v5h5" />
+                    <path d="M12 17v-6" />
+                    <path d="m9.5 13 2.5-2.5L14.5 13" />
+                  </svg>
+                </div>
+                <p class="upload-panel__title">Upload Blank DOCX</p>
+                <p class="upload-panel__subtitle">DOCX templates for country and user-specific drafting</p>
+                <p class="upload-panel__filename" id="template-upload-status">
+                  Korea_v6, Korea_v5 and India_v2 are currently available
+                </p>
+              </label>
+            </section>
+
+            <section class="config-panel" aria-labelledby="template-library-title">
+              <div class="panel-title-row">
+                <h2 id="template-library-title">Current Templates</h2>
+                <span class="panel-chip" id="template-count-chip">3 Templates</span>
+              </div>
+              <div class="template-library" id="template-library"></div>
+            </section>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="json-modal" hidden>
+      <div class="json-modal" role="dialog" aria-modal="true" aria-labelledby="json-modal-title">
+        <div class="json-modal__header">
+          <div>
+            <p class="json-modal__eyebrow">JSON Output</p>
+            <h2 id="json-modal-title">Deal JSON</h2>
+          </div>
+          <button class="json-modal__close" id="json-modal-close" type="button" aria-label="Close JSON viewer">
+            ×
+          </button>
+        </div>
+        <pre class="json-modal__content" id="json-modal-content"></pre>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="template-modal" hidden>
+      <div class="json-modal" role="dialog" aria-modal="true" aria-labelledby="template-modal-title">
+        <div class="json-modal__header">
+          <div>
+            <p class="json-modal__eyebrow">Edit Template</p>
+            <h2 id="template-modal-title">Template Settings</h2>
+          </div>
+          <button class="json-modal__close" id="template-modal-close" type="button" aria-label="Close template editor">
+            ×
+          </button>
+        </div>
+        <div class="template-form">
+          <div class="control-field">
+            <label class="control-field__label" for="template-name-input">Template Name</label>
+            <input id="template-name-input" class="select-shell__input select-shell__input--text" type="text" />
+          </div>
+          <div class="control-field">
+            <label class="control-field__label" for="template-region-input">Region</label>
+            <select id="template-region-input" class="select-shell__input">
+              <option>Korea</option>
+              <option>India</option>
+              <option>General</option>
+            </select>
+          </div>
+          <div class="template-form__actions">
+            <button class="mini-button mini-button--muted" id="template-modal-cancel" type="button">Cancel</button>
+            <button class="mini-button mini-button--primary" id="template-modal-save" type="button">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
